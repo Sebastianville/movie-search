@@ -20,7 +20,8 @@ function App() {
   const getMovie = async (searchTerm) => {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&t=${searchTerm}&type=movie`
+        //&type=movie only limits your search to movies 
+        `https://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&t=${searchTerm}&type=movie`
       );
       const data = await response.json();
       setMovie(data);
